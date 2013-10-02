@@ -1,4 +1,8 @@
 <?php
+/* create on 2013-10-02
+ * author lmm
+ * this is a function that check the time
+ */
 function checkTime($send_time,$limit_days){
     $begin_time = date("Y-m-d",strtotime($send_time));
     $end_time = date("Y-m-d");
