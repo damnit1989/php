@@ -24,3 +24,4 @@ if(checkTime('2013-10-1',1)){
 }else{
     echo 'bad';
 }
+//this is a test php ,i love it very much
