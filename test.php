@@ -23,7 +23,4 @@ if(checkTime('2013-10-1',1)){
     echo 'good';
 }else{
     echo 'bad';
-}
-//this is a test php ,i love it very much
-//this is a test i love it very much
-//this is a test i love it very much
+
