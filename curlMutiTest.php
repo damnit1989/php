@@ -1,4 +1,5 @@
 <?php
+//curl形式上的多线程请求远程网站地址
 
 function multiple_threads_request($nodes)
 {
