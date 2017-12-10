@@ -24,8 +24,8 @@ Nginx中fastcgi_pass的配置问题
 第二种:
 	#fastcgi_pass   127.0.0.1:9000;	
 
-这两种方式有什么区别，php7该用哪一个？
 
+这两种方式有什么区别，php7该用哪一个？
 
 Nginx和PHP-FPM的进程间通信有两种方式,一种是TCP,一种是UNIX Domain Socket.
 其中TCP是IP加端口,可以跨服务器.而UNIX Domain Socket不经过网络,只能用于Nginx跟PHP-FPM都在同一服务器的场景.用哪种取决于你的PHP-FPM配置:
