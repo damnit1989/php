@@ -91,7 +91,13 @@ mysql:
 
 缓存:
 	memcache
+		数据类型：string(key/value)
 	redis
+		数据类型：string(key/value),list,hash,set,sorted set
+		持久化：
+			RDB模式 dump.rbd
+			AOF模式 appendonly.aof
+			存放目录:/var/lib/redis/
 
 
 框架:
