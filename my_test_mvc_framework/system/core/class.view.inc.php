@@ -21,7 +21,9 @@ class View{
 		
 		// $view->nonce = $this->generate_nonce();
 		// $view->join_action = APP_URL.'room/join';
-
+		if(!$print){
+			ob_start();
+		}
 		require_once SYS_PATH.'/inc/header.inc.php';
 
 		$view_filepath = SYS_PATH.'/views/'.$this->view.'.inc.php';
@@ -29,14 +31,17 @@ class View{
 			throw new Exception('that view file does not exist');
 		}
 		
-		if(!$print){
-			ob_start();
-		}
+
 		require $view_filepath;
-		require_once SYS_PATH.'/inc/footer.inc.php';			
+		require_once SYS_PATH.'/inc/footer.inc.php';	
+		// ob_end_flush();
 		if(!$print){
 			return ob_get_clean();
 		}
 	
+	}
+	
+	public function error(){
+		echo 'This Page is Not Found';
 	}
 }

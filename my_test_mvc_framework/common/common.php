@@ -32,14 +32,16 @@ function remove_unwanted_slashes($dirty_path){
 }
 
 function class_autoloader($class_name){
+
 	// echo SYS_PATH;
+
 	$fname = strtolower($class_name);
 	$possible_locations = array(
 		SYS_PATH.'/models/class.'.$fname.'.inc.php',
 		SYS_PATH.'/controllers/class.'.$fname.'.inc.php',
 		SYS_PATH.'/core/class.'.$fname.'.inc.php',
 	);
-	
+
 	foreach($possible_locations as $loc){
 		if(file_exists($loc)){
 			require_once $loc;

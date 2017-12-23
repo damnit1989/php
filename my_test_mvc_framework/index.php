@@ -10,7 +10,7 @@ define('APP_FOLDER',dirname($_SERVER['SCRIPT_NAME']));
 define('APP_URL',remove_unwanted_slashes('http://'.$_SERVER['SERVER_NAME'].APP_FOLDER.'/'));
 define('SYS_PATH',APP_PATH.'/system');
 define('FORM_ACTION',remove_unwanted_slashes(APP_FOLDER.'process.php'));
-
+define('STATIC_HTML',APP_PATH.'/statichtml');
 
 //开启session
 if(!isset($_SESSION)){
@@ -46,6 +46,7 @@ $uri_array = parse_uri();
 
 //获取类名和方法名
 $class_name = get_controller_classname($uri_array);
+
 $action_name = get_action_name($uri_array);
 
 $options = $uri_array;

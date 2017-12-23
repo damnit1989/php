@@ -10,6 +10,7 @@ abstract class Controller{
 	protected static $nonce = NULL;
 	
 	public function __construct($options){
+
 		if(!is_array($options)){
 			throw new Exception('no options were supplied for the rooe');
 		}
@@ -25,4 +26,13 @@ abstract class Controller{
 	
 	abstract public function get_title();
 	abstract public function output_view();
+	
+	public  function  error(){
+		echo 'this is page is not found';
+	}
+	
+	//调用的方法不存在，则执行error方法
+	public function __call($name,$args){
+		header('Location:/home/error');
+	}
 }
