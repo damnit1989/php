@@ -25,7 +25,9 @@ php:
 			cookie 保存在客户端电脑,通过sessionid（cookie）识别服务端的session信息
 		post/get请求方式
 		
-		exec和system执行外部命令
+		exec()和system()执行外部命令
+			exec() 可以将执行的结果存入数组
+			system() 直接输出执行的结果
 
 	2.面向对象
 		接口(interface),抽象类(abstract),普通类(class)
@@ -34,8 +36,18 @@ php:
 			private:只允许在类的内部访问
 			protected:类的内部以及子类的内部访问
 	3.php设计模式
-		简单工程模式，工厂方法模式，抽象工厂模式，单例模式，策略模式等
-
+		简单工程模式
+		工厂方法模式
+		抽象工厂模式
+		单例模式
+		策略模式
+		......
+	
+	4.php框架常用函数
+		call_user_func(),call_user_func_array() 	执行普通函数，或者类的方法
+		spl_autoload_register() 	注册自动加载器 可以定义文件的搜寻目录
+		extract()  	从数组中将变量导入到当前的符号表
+		ob_start()	打开输出控制缓冲 ob_get_contents(),ob_end_flush()等
 
 mysql:
 	1.存储引擎:
@@ -118,6 +130,7 @@ web服务器：
 其他技术:
 
 	页面静态化
+		第一种：ob_start,ob_end_flush,ob_get_clean,ob_get_contents等函数将输出内容保存到静态html文件中，下次直接从静态文件返回内容输出
 	负载均衡
 	大数据访问
 	消息队列
