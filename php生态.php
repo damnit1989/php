@@ -28,6 +28,9 @@ php:
 		exec()和system()执行外部命令
 			exec() 可以将执行的结果存入数组
 			system() 直接输出执行的结果
+			
+		soap/wsdl
+			soap 分为两种，一种有wsdl文件，一种没有wsdl文件
 
 	2.面向对象
 		接口(interface),抽象类(abstract),普通类(class)
