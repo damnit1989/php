@@ -7,7 +7,7 @@
 	2.前端组件的cdn
 	3.前端组件的压缩处理
 	4.前端常用技术
-		上传插件，图表插件，实时推送插件，novnc，canvas，svg，xss攻击，ajax跨域
+		上传插件，图表插件，实时推送插件，novnc，canvas，svg，ajax跨域
 	5.http请求的状态码含义
 		200：
 		301：
@@ -16,7 +16,22 @@
 		403：
 		404：
 		500：
+	6.xss攻击(跨站脚本攻击)，sql注入,php过滤转义函数
+		htmlspecialchars()把HTML中的几个特殊字符转义成HTML Entity(格式：&xxxx;)形式，包括&,',",<,>五个字符。
 
+		& (AND) => &amp;
+		” (双引号) => &quot; (当ENT_NOQUOTES没有设置的时候)
+		‘ (单引号) => &#039; (当ENT_QUOTES设置)
+		< (小于号) => &lt;
+		> (大于号) => &gt;	
+		htmlspecialchars()可以用来过滤$GET，$POST，$COOKIE数据，预防XSS。注意htmlspecialchars函数只是把认为有安全隐患的HTML字符进行转义，如果想要把HTML所有可以转义的字符都进行转义的话请使用htmlentities。htmlspecialchars_decode为htmlspecialchars的decode函数。
+
+		mysqli_real_escape_string()
+		mysql_real_escape_string()		mysql_real_escape_string会调用MySQL的库函数mysql_real_escape_string，对\x00,\n,\r,\,',\x1a进行转义，即在前面添加反斜杠\，预防SQL注入。注意你不需要在读取数据库数据的时候调用
+		stripslashes	来进行unescape，因为这些反斜杠是在数据库执行SQL的时候添加的，当把数据写入到数据库的时候反斜杠会被移除，所以写入到数据库的内容就是原始数据，并不会在前面多了反斜杠。
+		
+		strip_tags
+		strip_tags会过滤掉NUL，HTML和PHP的标签
 
 php:
 	1.知识点
