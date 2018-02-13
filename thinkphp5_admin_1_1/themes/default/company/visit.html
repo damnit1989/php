@@ -1,0 +1,58 @@
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class=""><a href="{:url('index/company/index')}">企业信息设置</a></li>
+            <li class="layui-this"><a href="{:url('index/company/visit')}">访客类型设置</a></li>			
+            <li class=""><a href="{:url('index/company/camera')}">拍照设置</a></li>
+            <li class=""><a href="{:url('index/company/notice')}">通知设置</a></li>
+		</ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('index/company/saveSet')}" method="post">
+					{volist name="visit_list" id="vo"}
+						<div class="layui-form-item">
+							<label class="layui-form-label">{$vo.visit_name}</label>
+							<div class="layui-input-block">
+								<input type="checkbox" name="{$vo.visit_name}" lay-skin="switch" value="1" lay-text="开启|关闭" {if condition="$vo.is_open == 1"} checked {/if}>
+								<input type="hidden" name="type_name[]" value="{$vo.visit_name}" />
+							</div>
+						</div>					
+					{/volist}				
+						<!--<div class="layui-form-item">
+							<label class="layui-form-label">旅游</label>
+							<div class="layui-input-block">
+								<input type="checkbox" name="旅游" lay-skin="switch" value="1" lay-text="开启|关闭">
+								<input type="hidden" name="type_name[]" value="旅游" />
+							</div>
+						</div>-->
+
+
+						<div class="layui-form-item">
+							<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="*">保存</button>
+								<input type="hidden" name="set_type" value="visit">
+								<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+							</div>
+						</div>
+                </form>
+						<!--<button id="add_visit_btn">添加</button>-->				
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="__JS__/ueditor/ueditor.config.js"></script>
+<script src="__JS__/ueditor/ueditor.all.min.js"></script>
+
+
+<script>
+
+//加js显示不出来样式，可能追加文件后需要重新渲染
+$('#add_visit_btn').on('click',function(){
+	var html = '<div class="layui-form-item"><label class="layui-form-label"><input type="text" name="x" /></label><div class="layui-input-block"><input type="checkbox" name="旅游" lay-skin="switch" value="1" lay-text="开启|关闭"><input type="hidden" name="type_name[]" value="旅游" /></div></div>';
+	$('.test').append(html);
+
+})   
+</script>

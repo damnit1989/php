@@ -1,0 +1,27 @@
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">最新消息</li>
+            <li class=""><a href="{:url('index/index/email')}">发邮件</a></li>
+            <li class=""><a href="{:url('index/index/phone')}">发短信</a></li>
+		</ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+				<table class="layui-table">
+
+                    <tbody>
+                    {foreach name="list" item="vo"}
+                    <tr>
+						<td>	{$vo.visitor_name}今天来公司拜访了{$vo.name}，来访目的：{$vo.visitor_type}</td>
+
+                    </tr>
+                    {/foreach}
+                    </tbody>
+                </table>
+                <!--分页-->
+                {$list->render()}
+            </div>
+        </div>
+    </div>
+</div>

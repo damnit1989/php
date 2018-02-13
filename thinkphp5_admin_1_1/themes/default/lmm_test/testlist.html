@@ -1,0 +1,9 @@
+<script src="__JS__/jquery.min.js"></script>
+<div>
+<ul>
+{volist name='list' id='user'}
+    <li> {$user.desc}</li>
+{/volist}
+</ul>
+</div>
+{$list->render()}

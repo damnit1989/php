@@ -1,0 +1,64 @@
+
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class=""><a href="{:url('index/visitor/index')}">访客记录</a></li>
+            <li class="layui-this">添加</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('index/visitor/save')}" method="post">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">来访人姓名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="visitor_name" value="" required lay-verify="required" placeholder="请输入来访人姓名" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">来访人电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="visitor_phone" value="" required lay-verify="required" placeholder="请输入来访人电话" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">来访人Email</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="visitor_email" value="" required lay-verify="required" placeholder="请输入来访人Email" class="layui-input">
+                        </div>
+                    </div>					
+					<div class="layui-form-item">
+                        <label class="layui-form-label">拜访人</label>
+                        <div class="layui-input-block">
+
+                            <select name="member_id" lay-verify="required">
+								<option value="">请选择拜访人</option>		
+                                {foreach name="member_list" item="vo"}
+                                <option value="{$vo.id}">{$vo.name}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>
+					<div class="layui-form-item">
+                        <label class="layui-form-label">来访目的</label>
+                        <div class="layui-input-block">
+
+                            <select name="visitor_type" lay-verify="required">
+								<option value="">请选择</option>		
+                                {foreach name="visit_type_list" item="vo"}
+                                <option value="{$vo}">{$vo}</option>
+                                {/foreach}
+                            </select>
+                        </div>
+                    </div>					
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

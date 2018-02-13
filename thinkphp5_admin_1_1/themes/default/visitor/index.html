@@ -1,0 +1,100 @@
+<script src="__JS__/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+	$.ajax({
+		type:"GET",
+		url:"/index/visitor/visitorlist",
+		dataType:"json",     
+		success:function(data){
+			<!-- console.log(data); -->
+			//json字符串转换成json对象
+			//var obj = eval('(' + data + ')');
+			var obj = $.parseJSON(data); //由JSON字符串转换为JSON对象
+			//var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
+			if(obj.status){
+				$("#test").html(obj.msg);
+			}else{
+				$("#test").html("验证未通过:"+ obj.msg);
+			}
+		},
+		error:function(jqXHR){
+			$("#test").html("发生错误:"+jqXHR.status);
+		}
+		<!-- return false; -->
+	});
+
+});
+</script>
+
+
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">访客管理</li>
+            <li class=""><a href="{:url('index/visitor/add')}">添加</a></li>
+            <li class=""><a href="{:url('index/visitor/export')}">导出</a></li>
+            <li class=""><a href="{:url('index/visitor/import')}">导入</a></li>
+            <!--<li class=""><a href="{:url('index/member/edit')}">修改</a></li>
+            <li class=""><a href="{:url('index/member/delete')}">删除</a></li>-->
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+
+                <form class="layui-form layui-form-pane" action="{:url('index/visitor/index')}" method="get">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">关键词</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="keyword" value="{$keyword}" placeholder="请输入关键词" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn">搜索</button>
+                    </div>
+                </form>
+                <hr>
+
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <th style="width: 30px;">ID</th>
+                        <th>来访人姓名</th>
+                        <th>来访人手机</th>
+                        <th>来访人邮箱</th>
+                        <th>被访问人姓名</th>
+                        <th>被访问人电话</th>
+                        <th>来访目的</th>
+                        <!--<th>状态</th>-->
+                        <th>来访时间</th>
+						<th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {foreach name="list" item="vo"}
+                    <tr>
+                        <td>{$vo.id}</td>
+                        <td>{$vo.visitor_name}</td>
+                        <td>{$vo.visitor_phone}</td>
+                        <td>{$vo.visitor_email}</td>
+                        <td>{$vo.name}</td>
+                        <td>{$vo.phone}</td>
+                        <td>{$vo.visitor_type}</td>
+
+                        <td>{$vo.create_time}</td>
+
+                        <td>
+                            <a href="{:url('index/visitor/edit',['id'=>$vo['id']])}" class="layui-btn layui-btn-normal layui-btn-mini">编辑</a>
+                            <a href="{:url('index/visitor/delete',['id'=>$vo['id']])}" class="layui-btn layui-btn-danger layui-btn-mini ajax-delete">删除</a>
+                        </td>
+                    </tr>
+                    {/foreach}
+                    </tbody>
+                </table>
+                <!--分页-->
+                {$list->render()}
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>访客系统</title>
+    <meta name="description" content="Open Source BMS，全称Open Source Background System，基于ThinkPHP5开发的开源后台管理系统">
+    <link rel="stylesheet" href="__JS__/layui/css/layui.css">
+    <style>
+        .header {
+            width: 100%;
+            #height: 400px;
+            background: url(__STATIC__/images/login-bg.png) #56bc94;
+            text-align: center;
+        }
+
+        .header .top-nav {
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .header .top-nav h1 {
+            display: inline-block;
+            width: 300px;color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 24px;
+            line-height: 60px;
+            text-align: left;
+        }
+
+        .header .top-nav .layui-nav {
+            position: absolute;
+            top: 0;right: 0;
+            width: 600px;
+            text-align: right;
+            background: none;
+        }
+        .header .top-nav .layui-nav a {color: #fff;}
+        .header .download-btn {
+            display: inline-block;
+            width: 200px;
+            height: 60px;
+            line-height: 60px;
+            margin-top: 150px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: 18px;
+            transition: all .3s;
+        }
+        .header .download-btn:hover {
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .header .description {
+            width: 200px;
+            margin: 30px auto;
+            text-align: left;
+            color: #fff;
+        }
+
+        .content {margin-top: 50px;}
+		.layui-nav-child{
+			background-color:#489768;
+		}
+		
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="top-nav">
+        <div class="layui-main">
+            <h1>访客系统</h1>
+            <ul class="layui-nav">
+                <li class="layui-nav-item"><a href="{:url('/index')}">首页</a></li>
+                <li class="layui-nav-item"><a href="{:url('/index/visitor')}">访客记录</a></li>
+                <li class="layui-nav-item"><a href="{:url('/index/member')}">人员管理</a></li>
+                <li class="layui-nav-item"><a href="{:url('/index/company')}">企业设置</a></li>
+                <li class="layui-nav-item"><a href="{:url('/index/about')}">关于我们</a></li>
+				<!--<li class="layui-nav-item"><a href="{:url('index/About/index')}">{:session('admin_name')}</a></li>-->
+				<li class="layui-nav-item">
+					<a href="javascript:;">{:session('admin_name')}</a>
+					<dl class="layui-nav-child"> <!-- 二级菜单 -->
+						<dd><a href="{:url('index/login/change')}">修改密码</a></dd>
+						<dd><a href="{:url('index/login/logout')}">退出登录</a></dd>
+					</dl>
+				</li>				
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--<div class="layui-main content">
+    <fieldset class="layui-elem-field">
+        <legend>Open Source BMS</legend>
+        <div class="layui-field-box">-->
+			{__CONTENT__}
+<!--        </div>
+    </fieldset>
+
+    <p>2016-2017 © 幂聚科技(北京)有限公司</p>
+</div>-->
+
+<script src="__JS__/layui/lay/dest/layui.all.js"></script>
+<script>
+    var element = layui.element();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

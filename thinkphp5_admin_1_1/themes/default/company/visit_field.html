@@ -1,0 +1,51 @@
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+			{foreach $visit_list as $vo} 		
+				<li class=""><a href="{:url('index/company/visitField')}">{$vo.visit_name}</a></li>
+			{/foreach}
+		</ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('index/company/saveSet')}" method="post">
+					{volist name="visit_field_list" id="v"}
+						<div class="layui-form-item">
+							<label class="layui-form-label">{$v.field_name}</label>
+							<div class="layui-input-block">
+								<input type="checkbox" name="{$v.field_name}" lay-skin="switch" value="1" lay-text="开启|关闭" {if condition="$v.is_open == 1"} checked {/if}>
+								<input type="hidden" name="type_name[]" value="{$v.field_name}" />
+							</div>
+						</div>					
+					{/volist}				
+						<!--<div class="layui-form-item">
+							<label class="layui-form-label">旅游</label>
+							<div class="layui-input-block">
+								<input type="checkbox" name="旅游" lay-skin="switch" value="1" lay-text="开启|关闭">
+								<input type="hidden" name="type_name[]" value="旅游" />
+							</div>
+						</div>-->
+
+
+						<div class="layui-form-item">
+							<div class="layui-input-block">
+								<button class="layui-btn" lay-submit lay-filter="*">保存</button>
+								<input type="hidden" name="set_type" value="visit_field">
+								<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+							</div>
+						</div>
+                </form>
+		
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="__JS__/ueditor/ueditor.config.js"></script>
+<script src="__JS__/ueditor/ueditor.all.min.js"></script>
+
+
+<script>
+    
+</script>

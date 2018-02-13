@@ -1,0 +1,86 @@
+<script src="__JS__/jquery.min.js"></script>
+<script>
+console.log('sfsdfsd');
+//  $("#add_btn").click(function(){
+//    $.ajax({
+//        type:"GET",
+//        url:"/index/index/testPost",
+//        dataType:"json",
+//        success:function(data){
+//            $("#data").html(data.name + '的任务是' + data.task);
+//        },
+//        error:function(jqXHR){
+//             $("#data").html("发生错误:"+jqXHR.status);
+//        }
+//    });
+//  });
+
+$(document).ready(function(){
+	$("#add_btn").click(function(){
+		$.ajax({
+			type:"PUT",
+			url:"/blog/2",
+			data:{
+				username:$("#username").val(),
+				password:$("#password").val(),
+			},
+			dataType:"json",     
+			success:function(data){
+				<!-- console.log(data); -->
+				//json字符串转换成json对象
+				//var obj = eval('(' + data + ')');
+				var obj = $.parseJSON(data); //由JSON字符串转换为JSON对象
+				//var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
+				if(obj.status){
+					$("#test").html(obj.msg);
+					$("#test2").html(obj.data.username);
+					$("#test3").html(obj.data.password);
+				}else{
+					$("#test").html("验证未通过:"+ obj.msg);
+				}
+			},
+			error:function(jqXHR){
+				$("#test").html("发生错误:"+jqXHR.status);
+			}
+			<!-- return false; -->
+		});
+	});
+$("#del").click(function(){
+		$.ajax({
+			type:"DELETE",
+			url:"/blog/2",
+			dataType:"json",     
+			success:function(data){
+				<!-- console.log(data); -->
+				//json字符串转换成json对象
+				//var obj = eval('(' + data + ')');
+				var obj = $.parseJSON(data); //由JSON字符串转换为JSON对象
+				//var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
+				if(obj.status){
+					$("#test").html(obj.msg);
+					$("#test2").html(obj.data.username);
+					$("#test3").html(obj.data.password);
+				}else{
+					$("#test").html("验证未通过:"+ obj.msg);
+				}
+			},
+			error:function(jqXHR){
+				$("#test").html("发生错误:"+jqXHR.status);
+			}
+			<!-- return false; -->
+		});
+	});	
+});
+</script>
+<h3 id="test"></h3>
+<h3 id="test2"></h3>
+<h3 id="test3"></h3>
+<form action="" method="post">
+	<input type="text" name="username" id="username" value="test123"/>
+	<input type="text" name="password" id="password" value="123456"/>
+	<input type="hidden" name="_method" value="PUT" >	
+	<input type="button" value="add" id="add_btn"/>
+
+</form>
+
+<button id="del">删除</button>

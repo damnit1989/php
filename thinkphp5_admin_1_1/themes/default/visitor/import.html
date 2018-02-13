@@ -1,0 +1,71 @@
+<div class="layui-body">
+    <!--tab标签-->
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this"><a href="">导入成员</a></li>
+
+		</ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form class="layui-form form-container" action="{:url('index/company/save')}" method="post">
+
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">上传</label>
+                        <div class="layui-input-block">
+                            <!--<input type="text" name="logo_url" value="" class="layui-input layui-input-inline" id="thumb">-->
+                            <input type="file" name="file" class="upload_excel">
+                        </div>
+                    </div>					
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">模板文件</label>
+                        <div class="layui-input-block">
+							<a href="/public/down/visitor.xlsx"><i style="color:red">下载模板文件</i></a>
+                        </div>
+                    </div>
+
+                    <!--<div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="__JS__/ueditor/ueditor.config.js"></script>
+<script src="__JS__/ueditor/ueditor.all.min.js"></script>
+
+
+<script>
+    //$(function() {
+    //    var ue = UE.getEditor('content'),
+    //        uploadEditor = UE.getEditor('upload-photo-btn'),
+    //        photoListItem,
+    //        uploadImage;
+    //
+    //    uploadEditor.ready(function () {
+    //        uploadEditor.setDisabled();
+    //        uploadEditor.hide();
+    //        uploadEditor.addListener('beforeInsertImage', function (t, arg) {
+    //            $.each(arg, function (index, item) {
+    //                photoListItem = '<div class="photo-list"><input type="text" name="photo[]" value="' + item.src + '" class="layui-input layui-input-inline">';
+    //                photoListItem += '<button type="button" class="layui-btn layui-btn-danger remove-photo-btn">移除</button></div>';
+    //
+    //                $('#photo-container').append(photoListItem).on('click', '.remove-photo-btn', function () {
+    //                    $(this).parent('.photo-list').remove();
+    //                });
+    //            });
+    //        });
+    //    });
+    //
+    //    $('#upload-photo-btn').on('click', function () {
+    //        uploadImage = uploadEditor.getDialog("insertimage");
+    //        uploadImage.open();
+    //    });
+    //});
+</script>

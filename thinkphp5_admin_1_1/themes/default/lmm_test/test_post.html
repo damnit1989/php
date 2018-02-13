@@ -1,0 +1,54 @@
+<script src="__JS__/jquery.min.js"></script>
+<script>
+console.log('sfsdfsd');
+//  $("#add_btn").click(function(){
+//    $.ajax({
+//        type:"GET",
+//        url:"/index/index/testPost",
+//        dataType:"json",
+//        success:function(data){
+//            $("#data").html(data.name + '的任务是' + data.task);
+//        },
+//        error:function(jqXHR){
+//             $("#data").html("发生错误:"+jqXHR.status);
+//        }
+//    });
+//  });
+
+$(document).ready(function(){
+	$("#add_btn").click(function(){
+		$.ajax({
+			type:"POST",
+			url:"/index/index/testPost",
+			data:{
+				username:$("#username").val(),
+				password:$("#password").val(),
+			},
+			dataType:"json",     
+			success:function(data){
+				<!-- console.log(data); -->
+				//json字符串转换成json对象
+				//var obj = eval('(' + data + ')');
+				var obj = $.parseJSON(data); //由JSON字符串转换为JSON对象
+				//var obj = JSON.parse(data); //由JSON字符串转换为JSON对象
+				if(obj.status){
+					$("#test").html(obj.msg);
+				}else{
+					$("#test").html("验证未通过:"+ obj.msg);
+				}
+			},
+			error:function(jqXHR){
+				$("#test").html("发生错误:"+jqXHR.status);
+			}
+			<!-- return false; -->
+		});
+	});
+});
+</script>
+<h3 id="test"></h3>
+<!--<form action="" method="">-->
+	<input type="text" name="username" id="username" />
+	<input type="text" name="password" id="password" />
+	<input type="button" value="add" id="add_btn"/>
+
+<!--</form>-->
