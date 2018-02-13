@@ -30,24 +30,7 @@ CREATE TABLE `os_action_log` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='日志记录表';
 
--- ----------------------------
--- Records of os_action_log
--- ----------------------------
-INSERT INTO `os_action_log` VALUES ('1', '1', 'admin', '', '添加公司成员', '2018-02-09 11:28:49', '2018-02-09 11:28:49');
-INSERT INTO `os_action_log` VALUES ('2', '1', 'admin', '127.0.0.1', '添加公司成员', '2018-02-09 11:31:45', '2018-02-09 11:31:45');
-INSERT INTO `os_action_log` VALUES ('3', '1', 'admin', '127.0.0.1', '添加公司成员', '2018-02-09 11:41:40', '2018-02-09 11:41:40');
-INSERT INTO `os_action_log` VALUES ('4', '1', 'admin', '127.0.0.1', '添加公司成员：log_5', '2018-02-09 11:43:13', '2018-02-09 11:43:13');
-INSERT INTO `os_action_log` VALUES ('5', '1', 'admin', '127.0.0.1', '企业信心设置成功', '2018-02-11 10:55:33', '2018-02-11 10:55:33');
-INSERT INTO `os_action_log` VALUES ('6', '1', 'admin', '127.0.0.1', '企业信心设置成功', '2018-02-11 11:00:26', '2018-02-11 11:00:26');
-INSERT INTO `os_action_log` VALUES ('7', '1', 'admin', '127.0.0.1', '企业信心设置成功', '2018-02-11 11:03:29', '2018-02-11 11:03:29');
-INSERT INTO `os_action_log` VALUES ('8', '1', 'admin', '127.0.0.1', '设置企业信息', '2018-02-11 11:04:42', '2018-02-11 11:04:42');
-INSERT INTO `os_action_log` VALUES ('9', '1', 'admin', '127.0.0.1', '设置企业信息', '2018-02-11 11:13:03', '2018-02-11 11:13:03');
-INSERT INTO `os_action_log` VALUES ('10', '1', 'admin', '127.0.0.1', '设置企业信息', '2018-02-11 11:13:21', '2018-02-11 11:13:21');
-INSERT INTO `os_action_log` VALUES ('11', '1', 'admin', '127.0.0.1', '', '2018-02-11 11:14:58', '2018-02-11 11:14:58');
-INSERT INTO `os_action_log` VALUES ('12', '1', 'admin', '127.0.0.1', '设置企业信息', '2018-02-11 11:22:35', '2018-02-11 11:22:35');
-INSERT INTO `os_action_log` VALUES ('13', '1', 'admin', '127.0.0.1', '设置企业信息', '2018-02-11 11:23:12', '2018-02-11 11:23:12');
-INSERT INTO `os_action_log` VALUES ('14', '1', 'admin', '127.0.0.1', '设置企业信息', '2018-02-12 15:59:08', '2018-02-12 15:59:08');
-INSERT INTO `os_action_log` VALUES ('15', '1', 'admin', '127.0.0.1', '设置企业信息', '2018-02-12 15:59:09', '2018-02-12 15:59:09');
+
 
 -- ----------------------------
 -- Table structure for `os_admin_user`
@@ -277,8 +260,8 @@ CREATE TABLE `os_company` (
 -- ----------------------------
 -- Records of os_company
 -- ----------------------------
-INSERT INTO `os_company` VALUES ('1', 'mj', '90c367b260328c6260757669b6d116a7', '', null, '12345678901', '33@qq.com', '陕西省西安市', '345353', '2018-02-07 12:26:33', '2018-02-13 13:30:40');
-INSERT INTO `os_company` VALUES ('2', 'test', '90c367b260328c6260757669b6d116a7', '', null, '12345678963', '77@qq.com', '陕西省西安市雁塔区科技二路', '78945', '2018-02-07 13:23:04', '2018-02-13 13:31:38');
+INSERT INTO `os_company` VALUES ('1', 'mj', '90c367b260328c6260757669b6d116a7', '', null, '12345678901', '33@qq.com', 'xxxx', '345353', '2018-02-07 12:26:33', '2018-02-13 13:30:40');
+INSERT INTO `os_company` VALUES ('2', 'test', '90c367b260328c6260757669b6d116a7', '', null, '12345678963', '77@qq.com', 'xxxxx', '78945', '2018-02-07 13:23:04', '2018-02-13 13:31:38');
 
 -- ----------------------------
 -- Table structure for `os_company_camera_set`
@@ -413,47 +396,7 @@ CREATE TABLE `os_company_member_3` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='企业成员表';
 
--- ----------------------------
--- Records of os_company_member_3
--- ----------------------------
-INSERT INTO `os_company_member_3` VALUES ('1', '2', 'ddd', '13537663210', '44@qq.com', null, '2018-02-07 11:34:35', '2018-02-07 13:20:55');
-INSERT INTO `os_company_member_3` VALUES ('2', '1', 'aa_up', '13537663211', '55555@qq.com', null, '2018-02-07 11:34:39', '2018-02-08 11:23:11');
-INSERT INTO `os_company_member_3` VALUES ('3', '1', '66', '13537663210', '88@qq.com', null, '2018-02-07 11:34:43', '2018-02-07 11:34:45');
-INSERT INTO `os_company_member_3` VALUES ('4', '1', '张三', '13537663210', '88@qq.com', null, '2018-02-07 11:33:25', '2018-02-07 11:33:25');
-INSERT INTO `os_company_member_3` VALUES ('5', '1', 'log_1', '12345678909', 'ee@qq.com', null, '2018-02-09 11:26:43', '2018-02-09 11:26:43');
-INSERT INTO `os_company_member_3` VALUES ('6', '1', 'log_1', '12345678909', 'ee@qq.com', null, '2018-02-09 11:28:49', '2018-02-09 11:28:49');
-INSERT INTO `os_company_member_3` VALUES ('7', '1', 'log_2', '78945612347', '77@qq.com', null, '2018-02-09 11:31:45', '2018-02-09 11:31:45');
-INSERT INTO `os_company_member_3` VALUES ('8', '1', 'log_3', '45678912345', '789@qq.com', null, '2018-02-09 11:41:40', '2018-02-09 11:41:40');
-INSERT INTO `os_company_member_3` VALUES ('9', '1', 'log_5', '78945612345', '88@qq.com', null, '2018-02-09 11:43:13', '2018-02-09 11:43:13');
-INSERT INTO `os_company_member_3` VALUES ('10', '1', '测试', '12345678903', 'ww@qq.com', null, '2018-02-11 11:14:57', '2018-02-11 11:14:58');
-INSERT INTO `os_company_member_3` VALUES ('11', '1', 'xls_1', '98765432112', 'xls@qq.com', '技术', null, '2018-02-11 18:03:25');
-INSERT INTO `os_company_member_3` VALUES ('12', '1', 'xls_2', '98765432112', 'xls@qq.com', '技术', null, '2018-02-11 18:03:25');
-INSERT INTO `os_company_member_3` VALUES ('13', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-11 18:03:25');
-INSERT INTO `os_company_member_3` VALUES ('14', '1', 'xls_1', '98765432112', 'xls@qq.com', '技术', null, '2018-02-11 18:07:50');
-INSERT INTO `os_company_member_3` VALUES ('15', '1', 'xls_2', '98765432112', 'xls@qq.com', '技术', null, '2018-02-11 18:07:50');
-INSERT INTO `os_company_member_3` VALUES ('16', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-11 18:07:50');
-INSERT INTO `os_company_member_3` VALUES ('17', '1', 'xls_1', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 09:54:13');
-INSERT INTO `os_company_member_3` VALUES ('18', '1', 'xls_2', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 09:54:13');
-INSERT INTO `os_company_member_3` VALUES ('19', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 09:54:13');
-INSERT INTO `os_company_member_3` VALUES ('20', '1', 'xls_1', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 09:54:33');
-INSERT INTO `os_company_member_3` VALUES ('21', '1', 'xls_2', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 09:54:33');
-INSERT INTO `os_company_member_3` VALUES ('22', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 09:54:33');
-INSERT INTO `os_company_member_3` VALUES ('23', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:14:17');
-INSERT INTO `os_company_member_3` VALUES ('24', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:14:52');
-INSERT INTO `os_company_member_3` VALUES ('25', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:16:18');
-INSERT INTO `os_company_member_3` VALUES ('26', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:17:19');
-INSERT INTO `os_company_member_3` VALUES ('27', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:19:20');
-INSERT INTO `os_company_member_3` VALUES ('28', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:19:35');
-INSERT INTO `os_company_member_3` VALUES ('29', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:19:42');
-INSERT INTO `os_company_member_3` VALUES ('30', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:20:29');
-INSERT INTO `os_company_member_3` VALUES ('31', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:22:00');
-INSERT INTO `os_company_member_3` VALUES ('32', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:22:18');
-INSERT INTO `os_company_member_3` VALUES ('33', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:22:44');
-INSERT INTO `os_company_member_3` VALUES ('34', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:29:54');
-INSERT INTO `os_company_member_3` VALUES ('35', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:30:07');
-INSERT INTO `os_company_member_3` VALUES ('36', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:30:37');
-INSERT INTO `os_company_member_3` VALUES ('37', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:30:55');
-INSERT INTO `os_company_member_3` VALUES ('38', '1', 'xls_3', '98765432112', 'xls@qq.com', '技术', null, '2018-02-12 11:34:31');
+
 
 -- ----------------------------
 -- Table structure for `os_company_member_4`
@@ -793,7 +736,7 @@ CREATE TABLE `os_user` (
 -- ----------------------------
 -- Records of os_user
 -- ----------------------------
-INSERT INTO `os_user` VALUES ('1', 'lmm', '7b79e788e94c1c41b6d4e1b1280c4bdb', '13537663210', '448559829@qq.com', '1', '2018-02-06 10:19:03', null, '');
+INSERT INTO `os_user` VALUES ('1', 'lmm', '7b79e788e94c1c41b6d4e1b1280c4bdb', '123456897', '2345@qq.com', '1', '2018-02-06 10:19:03', null, '');
 
 -- ----------------------------
 -- Table structure for `os_visitor`
@@ -815,6 +758,4 @@ CREATE TABLE `os_visitor` (
 -- ----------------------------
 -- Records of os_visitor
 -- ----------------------------
-INSERT INTO `os_visitor` VALUES ('1', '111', '13537663210', '99@qq.com', '面试', '4', '1', '2018-02-07 15:37:24', '2018-02-07 15:37:24');
-INSERT INTO `os_visitor` VALUES ('2', '222', '78965412312', '987@qq.com', '亲友', '3', '1', '2018-02-07 15:40:18', '2018-02-07 15:40:18');
-INSERT INTO `os_visitor` VALUES ('3', '333', '13539887456', '88@qq.com', '其他', '2', '1', '2018-02-07 15:47:02', '2018-02-07 15:47:02');
+
