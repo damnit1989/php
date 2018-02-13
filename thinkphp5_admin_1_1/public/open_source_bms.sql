@@ -257,11 +257,7 @@ CREATE TABLE `os_company` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='企业信息表';
 
--- ----------------------------
--- Records of os_company
--- ----------------------------
-INSERT INTO `os_company` VALUES ('1', 'mj', '90c367b260328c6260757669b6d116a7', '', null, '12345678901', '33@qq.com', 'xxxx', '345353', '2018-02-07 12:26:33', '2018-02-13 13:30:40');
-INSERT INTO `os_company` VALUES ('2', 'test', '90c367b260328c6260757669b6d116a7', '', null, '12345678963', '77@qq.com', 'xxxxx', '78945', '2018-02-07 13:23:04', '2018-02-13 13:31:38');
+
 
 -- ----------------------------
 -- Table structure for `os_company_camera_set`
@@ -274,10 +270,7 @@ CREATE TABLE `os_company_camera_set` (
   PRIMARY KEY (`company_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='企业拍照设置表';
 
--- ----------------------------
--- Records of os_company_camera_set
--- ----------------------------
-INSERT INTO `os_company_camera_set` VALUES ('1', '1', '10');
+
 
 -- ----------------------------
 -- Table structure for `os_company_info`
@@ -295,10 +288,7 @@ CREATE TABLE `os_company_info` (
   PRIMARY KEY (`company_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='企业信息表';
 
--- ----------------------------
--- Records of os_company_info
--- ----------------------------
-INSERT INTO `os_company_info` VALUES ('1', '3333333', '/uploads/20180211/b2c6e4394f2f274392cbb619f60a52c3.jpg', '欢迎您的到来', null, '这是企业的地址', '2018-02-12 15:59:09', '2018-02-12 15:59:09');
+
 
 -- ----------------------------
 -- Table structure for `os_company_member`
@@ -454,11 +444,7 @@ CREATE TABLE `os_company_member_6` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='企业成员表';
 
--- ----------------------------
--- Records of os_company_member_6
--- ----------------------------
-INSERT INTO `os_company_member_6` VALUES ('1', '2', 'test_1', '12345678978', '888@qq.com', null, '2018-02-07 13:24:47', '2018-02-07 13:24:47');
-INSERT INTO `os_company_member_6` VALUES ('2', '2', 'test_2', '98765432101', '88@qq.com', null, '2018-02-07 13:34:25', '2018-02-07 13:34:25');
+
 
 -- ----------------------------
 -- Table structure for `os_company_member_7`
@@ -548,10 +534,7 @@ CREATE TABLE `os_company_token` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='token表';
 
--- ----------------------------
--- Records of os_company_token
--- ----------------------------
-INSERT INTO `os_company_token` VALUES ('4', '1', 'a10889a9f1b69b9fbbdf650acf935f99', '1518403913');
+
 
 -- ----------------------------
 -- Table structure for `os_company_visit`
@@ -709,11 +692,7 @@ CREATE TABLE `os_test` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='来访记录测试表';
 
--- ----------------------------
--- Records of os_test
--- ----------------------------
-INSERT INTO `os_test` VALUES ('1', '张三', '12345678965', '44@qq.com', '面试', '李四', null, '0', '2018-02-06 17:12:12', '2018-02-06 17:12:15');
-INSERT INTO `os_test` VALUES ('2', '张二', '12345678904', 'erw@qq.com', '拜访', '王五', null, '0', '2018-02-06 17:17:50', '2018-02-06 17:17:54');
+
 
 -- ----------------------------
 -- Table structure for `os_user`
@@ -736,7 +715,7 @@ CREATE TABLE `os_user` (
 -- ----------------------------
 -- Records of os_user
 -- ----------------------------
-INSERT INTO `os_user` VALUES ('1', 'lmm', '7b79e788e94c1c41b6d4e1b1280c4bdb', '123456897', '2345@qq.com', '1', '2018-02-06 10:19:03', null, '');
+
 
 -- ----------------------------
 -- Table structure for `os_visitor`
