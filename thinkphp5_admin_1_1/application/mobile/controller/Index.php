@@ -51,7 +51,7 @@ class Index extends ApiBase
 
 	public function testSendEmail(){
 		$notify_factory = new Notify_Factory;
-		$to = '448559829@qq.com';
+		$to = 'xxxx@qq.com';
 		$title = '测试';
 		$content = '这是测试内容';
 		$emailObj = new Email_Notify($to,$title,$content);		
