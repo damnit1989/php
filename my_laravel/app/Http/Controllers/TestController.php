@@ -17,8 +17,10 @@ class TestController extends Controller
     public function __construct()
     {
         // 自定义两个中间件
-        $this->middleware('App\Http\Middleware\TestBeforeMiddleware');
-        $this->middleware('App\Http\Middleware\TestAfterMiddleware');
+        // $this->middleware('App\Http\Middleware\TestBeforeMiddleware');
+        // $this->middleware('App\Http\Middleware\TestAfterMiddleware');        
+        $this->middleware('test.before');
+        $this->middleware('test.after');
         $this->middleware('auth');
     }
 
@@ -47,7 +49,7 @@ class TestController extends Controller
 
         echo '<pre>';  
 
-        $ret = event(new Event('ding'));
+        $ret = event(new Event('ding',$this,['id' => 1,'email' => '44855829']));
 
         print_r($ret);
     }

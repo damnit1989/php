@@ -27,9 +27,14 @@ class EventListener
     public function handle(Event $event)
     {
         //
-        print_R($event);
-        echo $event->getName();
-        // echo $event->socket; 
+        echo '<pre>';
+
+        print_R([
+            'name' => $event->name,
+            'sender' => $event->sender,
+            'data' => $event->data,
+        ]);
+
         return $event->name;
     }
 }

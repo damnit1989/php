@@ -12,7 +12,7 @@ class TestAfterMiddleware
 
         // return $next($request);
         $response = $next($request);
-        print_R($response->getContent());
+        // print_R($response->getContent());
         echo 'Response middleware';
         $response->setStatusCode(500);
 

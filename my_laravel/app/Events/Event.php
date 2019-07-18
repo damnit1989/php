@@ -16,15 +16,21 @@ class Event
 
     public $name;
 
+    public $sender;
+
+    public $data;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($name)
+    public function __construct($name,$sender,$data)
     {
         //
         $this->name = $name;
+        $this->sender = $sender;
+        $this->data = $data;
     }
 
     /**
