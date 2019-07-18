@@ -30,11 +30,11 @@ class Login extends Controller{
 			$receiveArr = json_decode($receiveJsonData,true);
 			// var_dump($receiveArr);die;
 			// $this->writeLog($receiveArr);
-			$receiveHead = $receiveArr['head'];
-			$receiveBody = $receiveArr['body'];			
+			// $receiveHead = $receiveArr['head'];
+			// $receiveBody = $receiveArr['body'];			
             // $validate_result = $this->validate($data, 'Login');
-			$where['username'] = $receiveBody['username'];
-			$where['password'] = md5($receiveBody['password'] . Config::get('salt'));
+			$where['username'] = $receiveArr['username'];
+			$where['password'] = md5($receiveArr['password'] . Config::get('salt'));
 			
 			// 启动事务
 			Db::startTrans();

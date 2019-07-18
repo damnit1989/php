@@ -9,7 +9,8 @@ echo "<h2>TCP/IP Connection</h2>\n";
 
 /* Get the IP address for the target host. */
 // $address = gethostbyname('www.example.com');
-$address = '127.0.0.1';
+#$address = '127.0.0.1';
+$address = '192.168.17.134';
 $service_port = 9999;
 
 /* Create a TCP/IP socket. */
