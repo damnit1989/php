@@ -19,9 +19,14 @@ Route::get('/users', function()
     return 'Users!';
 });
 
+// 覆盖系统自带路由
+Route::get('/auth/login', 'Auth\LoginController@showLoginForm');
+
 Route::get('/test', 'TestController@index');
 Route::get('/info', 'TestController@info');
-Route::get('/event', 'TestController@event');
+Route::get('/event', 'TestController@event'); 
+Route::get('/face', 'TestController@face'); 
+
 
 // 资源路由
 Route::resource('photos', 'PhotoController');
