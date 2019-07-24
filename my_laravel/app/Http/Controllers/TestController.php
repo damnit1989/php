@@ -75,4 +75,13 @@ class TestController extends Controller
     }
     
 
+    /**
+     * 解析自定义服务
+     */
+    public function getComponent(){
+        $dagComponent = app()->make('dag');
+        $dagComponent = app('dag');
+        print_R($dagComponent);
+    }
+
 }

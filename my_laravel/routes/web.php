@@ -26,6 +26,9 @@ Route::get('/test', 'TestController@index');
 Route::get('/info', 'TestController@info');
 Route::get('/event', 'TestController@event'); 
 Route::get('/face', 'TestController@face'); 
+Route::get('/visitor', 'VisitorController@index'); 
+Route::get('/component', 'TestController@getComponent'); 
+
 
 
 // 资源路由

@@ -19,6 +19,10 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrustProxies::class,
+
+        // 自定义
+        \App\Http\Middleware\ValidateMethod1Middleware::class,
+
     ];
 
     /**
@@ -28,6 +32,8 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
+            'validate.method2',
+            // 'change.header',
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
@@ -35,6 +41,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            
         ],
 
         'api' => [
@@ -58,8 +65,11 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
 
-        // 自定义两个中间件
+        // 自定义中间件
         'test.before' => \App\Http\Middleware\TestBeforeMiddleware::class,
         'test.after' => \App\Http\Middleware\TestAfterMiddleware::class,
+        'change.header' => \App\Http\Middleware\ChangeHeaderMiddleware::class,
+        'validate.method1' => \App\Http\Middleware\ValidateMethod1Middleware::class,
+        'validate.method2' => \App\Http\Middleware\ValidateMethod2Middleware::class,
     ];
 }

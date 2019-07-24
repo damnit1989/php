@@ -177,6 +177,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // 自定义服务器提供者
+        App\Providers\DagServiceProvider::class,
+
     ],
 
     /*
