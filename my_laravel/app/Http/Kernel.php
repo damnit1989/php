@@ -10,6 +10,8 @@ class Kernel extends HttpKernel
      * The application's global HTTP middleware stack.
      *
      * These middleware are run during every request to your application.
+     * 
+     * 所有请求都会经过这一组中间件，包括(web路由，api路由).
      *
      * @var array
      */
@@ -21,7 +23,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrustProxies::class,
 
         // 自定义
-        \App\Http\Middleware\ValidateMethod1Middleware::class,
+        // \App\Http\Middleware\ValidateMethod1Middleware::class,
 
     ];
 
@@ -32,7 +34,7 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            'validate.method2',
+            // 'validate.method2',
             // 'change.header',
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,

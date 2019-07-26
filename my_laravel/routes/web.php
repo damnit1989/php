@@ -23,16 +23,16 @@ Route::get('/users', function()
 Route::get('/auth/login', 'Auth\LoginController@showLoginForm');
 
 Route::get('/test', 'TestController@index');
-Route::get('/info', 'TestController@info');
+Route::get('/info', 'TestController@info')->middleware('test.after');
 Route::get('/event', 'TestController@event'); 
 Route::get('/face', 'TestController@face'); 
 Route::get('/visitor', 'VisitorController@index'); 
 Route::get('/component', 'TestController@getComponent'); 
 
 
-
 // 资源路由
-Route::resource('photos', 'PhotoController');
+// Route::resource('phones', 'PhoneController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

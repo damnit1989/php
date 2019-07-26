@@ -21,7 +21,7 @@ class TestController extends Controller
         // $this->middleware('App\Http\Middleware\TestAfterMiddleware'); 
 
         $this->middleware('test.before');
-        $this->middleware('test.after');
+        // $this->middleware('test.after');
         
         // $this->middleware('auth');
     }

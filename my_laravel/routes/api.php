@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// 资源路由
+Route::resources([
+    'logs' => 'ActionLogController',
+    'phones' => 'PhoneController',   
+]);
+
+
+
