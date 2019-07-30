@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\phone;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class PhoneController extends Controller
 {
@@ -57,9 +58,20 @@ class PhoneController extends Controller
      */
     public function show(phone $phone)
     {
-        //
-        // $phone = phone::getPhoneById(1);
-        return $phone;
+
+        try{
+            // $phone = phone::getPhoneById(1);
+            // return $phone;
+
+            // throw new \Exception('success',200);
+            throw new \Exception('failure',203);
+
+        }catch(\Exception $e){
+
+            // 两种方式调用宏 1-静态方法，2-类方法
+            // return Response::caps($e);            
+            return response()->caps($e);
+        }
     }
 
     /**

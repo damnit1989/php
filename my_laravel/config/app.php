@@ -179,6 +179,8 @@ return [
 
         // 自定义服务器提供者
         App\Providers\DagServiceProvider::class,
+        App\Providers\ResponseMacroServiceProvider::class,
+        
 
     ],
 
