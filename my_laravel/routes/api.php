@@ -13,15 +13,21 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+
+Route::middleware([])->namespace('Admin')->group(function(){
+    
+    Route::get('/user', function (Request $request) {
+        return $request->user();
+    });
+
+    // 资源路由
+    Route::resources([
+        'admin/logs' => 'ActionLogController',
+        'admin/phones' => 'PhoneController',   
+    ]);   
 });
-
-// 资源路由
-Route::resources([
-    'logs' => 'ActionLogController',
-    'phones' => 'PhoneController',   
-]);
-
-
-
