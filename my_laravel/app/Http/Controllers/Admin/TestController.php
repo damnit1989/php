@@ -3,12 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-// use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use App\Users\Repository as UserRepository;
-use Illuminate\Container\Container;
 use App\Events\Event;
 use App\User;
 
@@ -21,7 +15,7 @@ class TestController extends Controller
         // $this->middleware('App\Http\Middleware\TestBeforeMiddleware');
         // $this->middleware('App\Http\Middleware\TestAfterMiddleware'); 
 
-        $this->middleware('test.before');
+        // $this->middleware('test.before');
         // $this->middleware('test.after');
         
         // $this->middleware('auth');
@@ -83,6 +77,27 @@ class TestController extends Controller
         $dagComponent = app()->make('dag');
         $dagComponent = app('dag');
         print_R($dagComponent);
+    }
+
+
+    /**
+     * 解析markdown文件
+     */
+    public function mk(){
+
+        // 文件地址
+        // $fileName = base_path('resources/mkdown/event.md');
+        $fileName = resource_path('mkdown/event.md');
+
+        // 读取markdown文件
+        $content = file_get_contents($fileName);
+
+        // 解析
+        $Parsedown = new \Parsedown();
+        // echo $Parsedown->text($content); # prints: <p>Hello <em>Parsedown</em>!</p>
+
+        // 输出
+        return view('home/mkdown',['content' => $Parsedown->text($content)]);
     }
 
 }

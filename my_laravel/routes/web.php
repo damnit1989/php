@@ -26,6 +26,7 @@ Route::get('/test', 'Admin\TestController@index');
 Route::get('/info', 'Admin\TestController@info')->middleware('test.after');
 Route::get('/event', 'Admin\TestController@event'); 
 Route::get('/face', 'Admin\TestController@face'); 
+Route::get('/mk', 'Admin\TestController@mk'); 
 Route::get('/visitor', 'Admin\VisitorController@index'); 
 Route::get('/component', 'Admin\TestController@getComponent'); 
 
