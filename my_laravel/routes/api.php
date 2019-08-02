@@ -19,7 +19,7 @@ use Illuminate\Http\Request;
 
 
 
-Route::middleware(['auth:api'])->namespace('Admin')->group(function(){
+Route::middleware([])->namespace('Admin')->group(function(){
     
     Route::get('/user', function (Request $request) {
         return $request->user();
@@ -30,4 +30,6 @@ Route::middleware(['auth:api'])->namespace('Admin')->group(function(){
         'admin/logs' => 'ActionLogController',
         'admin/phones' => 'PhoneController',   
     ]);   
+
+    Route::get('/redis', 'TestController@redis')->name('redis');
 });

@@ -100,4 +100,15 @@ class TestController extends Controller
         return view('home/mkdown',['content' => $Parsedown->text($content)]);
     }
 
+
+    public function redis(){
+        $redis = app()->make('redis');
+        echo '<pre>';
+        $age = $redis->get('age');
+        $laravel = $redis->get('laravel');
+        // $redis->set('laravel','laravel');
+        var_dump($age,$laravel);
+        // print_R($redis);die;
+    }
+
 }
