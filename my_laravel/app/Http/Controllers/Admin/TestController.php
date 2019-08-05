@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Events\Event;
 use App\User;
+use App\Jobs\SendReminderEmail;
+use Carbon\Carbon;
 
 class TestController extends Controller
 {
@@ -101,14 +103,38 @@ class TestController extends Controller
     }
 
 
+    /**
+     * 测试redis连接
+     */
     public function redis(){
-        $redis = app()->make('redis');
-        echo '<pre>';
+
+        # 获取redis实例
+        // $redis = app()->make('redis');
+        $redis = app()->makeWith('redis');
+
         $age = $redis->get('age');
         $laravel = $redis->get('laravel');
         // $redis->set('laravel','laravel');
-        var_dump($age,$laravel);
-        // print_R($redis);die;
+
+        echo $age,$laravel;
+
+    }
+
+
+    /**
+     * 测试队列
+     */
+    public function job(){
+        SendReminderEmail::dispatch( new SendReminderEmail())
+                        // ->delay(Carbon::now()->addMinutes(10))
+                        ->onConnection('database');
+
+        // SendReminderEmail::dispatch( new SendReminderEmail())->onConnection('database');
+        
+        SendReminderEmail::dispatch(new SendReminderEmail())
+                        ->delay(Carbon::now()->addMinutes(10))
+                        ->onConnection('database')
+                        ->onQueue('email');
     }
 
 }

@@ -27,8 +27,10 @@ Route::get('/info', 'Admin\TestController@info')->middleware('test.after');
 Route::get('/event', 'Admin\TestController@event'); 
 Route::get('/face', 'Admin\TestController@face'); 
 Route::get('/mk', 'Admin\TestController@mk'); 
-Route::get('/visitor', 'Admin\VisitorController@index'); 
+Route::get('/job', 'Admin\TestController@job');
 Route::get('/component', 'Admin\TestController@getComponent'); 
+
+Route::get('/visitor', 'Admin\VisitorController@index'); 
 
 
 // 资源路由

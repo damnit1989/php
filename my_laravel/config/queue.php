@@ -57,6 +57,7 @@ return [
             'region' => env('SQS_REGION', 'us-east-1'),
         ],
 
+        // redis中存储任务的数据类型是有序集合
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
